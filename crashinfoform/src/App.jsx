@@ -6,6 +6,9 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "./components/MyDocument";
 import { useState } from "react";
 
+
+
+
 function App() {
 
   const buttonStyle = {
@@ -49,7 +52,7 @@ function App() {
   });
 
   return (
-    <div style={{paddingBottom: '50px', display: 'flex', flexDirection: 'column'}}>
+    <div style={{paddingBottom: '50px', display: 'flex', flexDirection: 'column', margin: "0 50px", maxWidth: "600px"}}>
       <h1>Crash Info Form</h1>
       <p style={{textAlign: 'justify'}}>
         If an ambulance comes it's best practice to go to the hospital, even if

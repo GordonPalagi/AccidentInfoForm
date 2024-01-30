@@ -1,17 +1,20 @@
-
+import FormControl from "@mui/joy/FormControl";
+import FormLabel from "@mui/joy/FormLabel";
+import Input from "@mui/joy/Input";
+import Button from '@mui/joy/Button';
 
 const WitnessForm = ({ witness, index, handleChange }) => {
     return (
-        <form action="" style={{display: 'flex', flexDirection: 'column', padding: '12px'}}>
+        <FormControl action="" style={{display: 'flex', flexDirection: 'column', padding: '12px'}}>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '10px 0px'}}>
-              <label htmlFor={`name-${index}`}>Name</label>
-              <input style={{width: '100%'}} type="text" name="name" id={`name-${index}`} value={witness.name} onChange={(e) => handleChange(e, index)}/>
+              <FormLabel style={{color: "white", fontSize: "1.3rem"}} htmlFor={`name-${index}`}>Name</FormLabel>
+              <Input variant="solid" placeholder="Type in here..." style={{width: '100%'}} type="text" name="name" id={`name-${index}`} value={witness.name} onChange={(e) => handleChange(e, index)}/>
             </div>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-              <label htmlFor={`phone-${index}`}>Phone</label>
-              <input style={{width: '100%'}} type="tel" name="phone" id={`phone-${index}`} value={witness.phone} onChange={(e) => handleChange(e, index)}/>
+              <FormLabel style={{color: "white", fontSize: "1.3rem"}} htmlFor={`phone-${index}`}>Phone</FormLabel>
+              <Input variant="solid" placeholder="Type in here..." style={{width: '100%'}} type="tel" name="phone" id={`phone-${index}`} value={witness.phone} onChange={(e) => handleChange(e, index)}/>
             </div>
-        </form>
+        </FormControl>
     );
 }
 
@@ -36,7 +39,7 @@ function Witness({ witnesses, setWitnesses}) {
                 <WitnessForm key={index} witness={witness} index={index} handleChange={handleChange}/>
             ))}
             
-            <button onClick={addWitness}> Add Witness</button>
+            <Button variant="solid" size="lg" onClick={addWitness}> Add Witness</Button>
         </div>
     );
 }
