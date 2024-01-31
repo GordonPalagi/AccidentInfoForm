@@ -5,8 +5,7 @@ import DriverInfo from "./components/DriverInfo";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "./components/MyDocument";
 import { useState } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 
 function App() {
@@ -53,6 +52,7 @@ function App() {
 
   return (
     <div style={{paddingBottom: '50px', display: 'flex', flexDirection: 'column', margin: "0 10px", maxWidth: "600px"}}>
+      {injectSpeedInsights()}
       <h1>Crash Info Form</h1>
       <p style={{textAlign: 'justify'}}>
         If an ambulance comes it's best practice to go to the hospital, even if
@@ -81,12 +81,6 @@ function App() {
       >
         {({ loading }) => (loading ? "Loading document..." : "Download as PDF")}
       </PDFDownloadLink>
-      <SpeedInsights
-        id="speed-insights"
-        url="https://crashinfoform.vercel.app"
-        locale="en"
-        strategy="mobile"
-      />
     </div>
   );
 }
