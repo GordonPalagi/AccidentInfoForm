@@ -5,7 +5,7 @@ import DriverInfo from "./components/DriverInfo";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "./components/MyDocument";
 import { useState } from "react";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
@@ -81,6 +81,12 @@ function App() {
       >
         {({ loading }) => (loading ? "Loading document..." : "Download as PDF")}
       </PDFDownloadLink>
+      <SpeedInsights
+        id="speed-insights"
+        url="https://crashinfoform.vercel.app"
+        locale="en"
+        strategy="mobile"
+      />
     </div>
   );
 }
