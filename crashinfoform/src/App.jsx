@@ -52,7 +52,7 @@ function App() {
   });
 
   return (
-    <div style={{paddingBottom: '50px', display: 'flex', flexDirection: 'column', margin: "0 50px", maxWidth: "600px"}}>
+    <div style={{paddingBottom: '50px', display: 'flex', flexDirection: 'column', margin: "0 10px", maxWidth: "600px"}}>
       <h1>Crash Info Form</h1>
       <p style={{textAlign: 'justify'}}>
         If an ambulance comes it's best practice to go to the hospital, even if
@@ -60,8 +60,8 @@ function App() {
         extent of your injuries. If you don't go to the hospital, you should
         still see a doctor as soon as possible.
       </p>
-      <p style={{textAlign: 'justify'}}>You can fill out this form, and then download it as a pdf.</p>
-      <p style={{textAlign: 'justify', paddingBottom: '20px'}}>REMEBER: Take pictures of the scene and the damage to your car.</p>
+      <p style={{textAlign: 'justify'}}>Fill out this form, and download it as a pdf for later use.</p>
+      <p style={{textAlign: 'justify', paddingBottom: '20px'}}>IMPORTANT: Take pictures of the scene and the damage to your car.</p>
 
       <WitnessInfo witnesses={witnesses} setWitnesses={setWitnesses} />
       <DriverInfo driverInfo={driverInfo} setDriverInfo={setDriverInfo} />
